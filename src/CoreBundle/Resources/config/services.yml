@@ -1,0 +1,5 @@
+services:
+    my.formation_file_uploader:
+        class: CoreBundle\Service\FormationFileUploader
+        arguments:
+            $_dir: '%formation_dir%'

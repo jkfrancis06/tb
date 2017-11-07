@@ -1,0 +1,164 @@
+sms:
+    path: /sms
+    defaults:
+        _controller: CoreBundle:User:sms
+
+user_create:
+    path: /inscription/{url}
+    defaults:
+        _controller: CoreBundle:User:create
+        
+user_account:
+    path: /mon-compte
+    defaults:
+        _controller: CoreBundle:User:account
+        
+user_profil_update:
+    path: /profil
+    defaults:
+        _controller: CoreBundle:User:profilUpdate
+
+user_update:
+    path: /update
+    defaults:
+        _controller: CoreBundle:User:update
+
+payer:
+    path: /paiement
+    defaults:
+        _controller: CoreBundle:Paiement:payer
+        
+paiements_invalides:
+    path: /admin/paiements-invalides
+    defaults:
+        _controller: CoreBundle:Paiement:paiementsInvalides
+        
+valider_paiement:
+    path: /admin/valider-paiement{id}
+    defaults:
+        _controller: CoreBundle:Paiement:validerPaiement
+
+xhr_get_parrain:
+    path: /xhr-get-parrain/{code}
+    defaults:
+        _controller: CoreBundle:User:xhrGetParrain
+        code: ""
+
+user_index:
+    path: /tableau-de-bord
+    defaults:
+        _controller: CoreBundle:User:index
+
+demande_de_retrait:
+    path: /demande-de-retrait
+    defaults:
+        _controller: CoreBundle:User:demandeDeRetrait
+
+organigramme:
+    path: /organigramme
+    defaults:
+        _controller: CoreBundle:User:organigramme
+
+liste_general:
+    path: /liste-des-membres-en-general
+    defaults:
+        _controller: CoreBundle:User:listeGeneral
+
+liste_niveau:
+    path: /liste-des-membres-par-niveau
+    defaults:
+        _controller: CoreBundle:User:listeNiveau
+
+liste_generation:
+    path: /liste-des-membres-par-generation
+    defaults:
+        _controller: CoreBundle:User:listeGeneration
+
+user_login:
+    path: /connexion
+    defaults:
+        _controller: CoreBundle:User:login
+
+user_login_check:
+    path: /login_check
+
+user_logout:
+    path: /logout
+
+produit_create:
+    path: /admin/produit/create
+    defaults:
+        _controller: CoreBundle:Produit:create
+
+produit_commander:
+    path: /produit/commander
+    defaults:
+        _controller: CoreBundle:Produit:commander
+
+achats:
+    path: /achats
+    defaults:
+        _controller: CoreBundle:Produit:achats
+
+gains:
+    path: /gains
+    defaults:
+        _controller: CoreBundle:ComptePercevable:gains
+
+points:
+    path: /points
+    defaults:
+        _controller: CoreBundle:Point:points
+        
+alimentation:
+    path: /alimentation
+    defaults:
+        _controller: CoreBundle:CompteAlimentation:alimentation
+        
+rep:
+    path: /repositionnement
+    defaults:
+        _controller: CoreBundle:User:rep
+        
+formation_create:
+    path: /admin/ajouter-formation
+    defaults:
+        _controller: CoreBundle:Formation:create
+        
+formation_index:
+    path: /formations
+    defaults:
+        _controller: CoreBundle:Formation:index
+        
+admin_login:
+    path: /admin/connexion
+    defaults:
+        _controller: CoreBundle:Admin:login
+        
+admin_login_check:
+    path: /admin/login_check
+    
+admin_logout:
+    path: /admin/logout
+
+admin_create:
+    path: /admin/create
+    defaults:
+        _controller: CoreBundle:Admin:create
+        
+admin_profil:
+    path: /admin/mon-profil
+    defaults:
+        _controller: CoreBundle:Admin:profil
+        
+admin_modifier_profil:
+    path: /admin/modifier-profil
+    defaults:
+        _controller: CoreBundle:Admin:modifierProfil
+        
+admin_ajouter_user:
+    path: /admin/ajouter-membre
+    defaults:
+        _controller: CoreBundle:Admin:ajouterMembre
+
+

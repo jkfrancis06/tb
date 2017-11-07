@@ -1,0 +1,46 @@
+security:
+    encoders:
+        CoreBundle\Entity\Admin: plaintext
+        CoreBundle\Entity\User: plaintext
+#            algorithm: sha1
+#            iterations: 6324
+#            encode_as_base64: true
+    role_hierarchy:
+        ROLE_USER:
+        ROLE_ADMIN:
+    providers:
+        user:
+            entity:
+                class: CoreBundle\Entity\User
+                property: tel
+        admin:
+            entity:
+                class: CoreBundle\Entity\Admin
+                property: tel
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        admin:
+            pattern: ^/admin
+            anonymous: true
+            provider: admin
+            form_login:
+                login_path: admin_login
+                check_path: admin_login_check
+                default_target_path: formation_create
+            logout:
+                path: admin_logout
+                target: admin_login
+        user:
+            pattern: ^/
+            anonymous: true
+            provider: user
+            form_login:
+                login_path: user_login
+                check_path: user_login_check
+                default_target_path: user_index
+            logout:
+                path: user_logout
+                target: user_login
+    access_control:

@@ -1,0 +1,64 @@
+{% extends 'CoreBundle:User:base.html.twig' %}
+
+{% block title %}Modification Du Profil - {{parent()}}{% endblock %}
+
+{% block _container %}
+    <div class="row">
+        <div class="page-header">
+            <h3>Modification Du Profil</h3>
+        </div>
+        <div class="col-lg-offset-1 col-lg-9 col-md-offset-1 col-md-8 col-sm-offset-1 col-sm-10">
+            {{form_start(form)}}
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            {{form_label(form.nom, 'Nom')}}
+                            {{form_widget(form.nom, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.prenoms, 'Prenoms')}}
+                            {{form_widget(form.prenoms, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.tel, 'Numero de telephone')}}
+                            {{form_widget(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Exxenple: 0022899887766/99887766'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.email, 'E-mail (facultatif)')}}
+                            {{form_widget(form.email, {'attr': {'class': 'form-control'}})}}
+                            {{form_errors(form.email)}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.adresse, 'Adresse')}}
+                            {{form_widget(form.adresse, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            {{form_label(form.profession, 'Profession')}}
+                            {{form_widget(form.profession, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.pays, 'Pays')}}
+                            {{form_widget(form.pays, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.ville, 'Ville')}}
+                            {{form_widget(form.ville, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.password, 'Mot de passe')}}
+                            {{form_widget(form.password, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            <label for="cp">Confirmer mot de passe</label>
+                            <input type="password" name="cp" id="cp" class="form-control"/>
+                        </div>
+                    {{form_widget(form.Valider, {'attr': {'class': 'btn btn-default pull-right'}})}}
+                    </div>
+                </div>
+            {{form_end(form)}}
+        </div>
+    </div>
+    <br/>
+{% endblock %}

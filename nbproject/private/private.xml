@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/opt/lampp/htdocs/tb/src/CoreBundle/Resources/views/User/create.html.twig</file>
+            <file>file:/opt/lampp/htdocs/tb/src/CoreBundle/Controller/UserController.php</file>
+            <file>file:/opt/lampp/htdocs/tb/src/CoreBundle/Resources/views/User/menu.html.twig</file>
+            <file>file:/opt/lampp/htdocs/tb/src/CoreBundle/Resources/config/routing.yml</file>
+            <file>file:/opt/lampp/htdocs/tb/src/CoreBundle/Resources/views/User/organigramme.html.twig</file>
+            <file>file:/opt/lampp/htdocs/tb/app/config/security.yml</file>
+            <file>file:/opt/lampp/htdocs/tb/src/CoreBundle/Resources/views/User/base.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,39 @@
+{% extends 'CoreBundle:User:base.html.twig' %}
+
+{% block title %}Nouveau Produit - {{parent()}}{% endblock %}
+
+{% block _container %}
+    <div class="row">
+        <div class="page-header">
+            <h3>Nouveau Produit</h3>
+        </div>
+        <div class="col-lg-offset-1 col-lg-9 col-md-offset-1 col-md-8 col-sm-offset-1 col-sm-10">
+            {{form_start(form)}}
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            {{form_label(form.nom, 'Nom')}}
+                            {{form_widget(form.nom, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.prix, 'Prix Unitaire')}}
+                            {{form_widget(form.prix, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            {{form_label(form.commission, 'Commission')}}
+                            {{form_widget(form.commission, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.point, 'Point')}}
+                            {{form_widget(form.point, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <input type="submit" value="Creer" class="btn btn-default pull-right" />
+                    </div>
+                </div>
+            {{form_end(form)}}
+        </div>
+    </div>
+    <br/>
+{% endblock %}

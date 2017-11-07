@@ -1,0 +1,79 @@
+{% extends 'CoreBundle:User:base.html.twig' %}
+
+{% block title %}Mon Compte - {{parent()}}{% endblock %}
+
+{% block _container %}
+    <div class="page-header">
+        <h3>Mon Compte</h3>
+    </div>
+    <div class="row" id="profil">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="panel-title">Profil</span>
+                    <a href="{{path('user_update')}}" class="pull-right">Modifier le profil</a>
+                </div>
+                <table class="table table-striped">
+                    <tr>
+                        <th class="text-align-right" style="border-top: none;">ID</th>
+                        <td style="border-top: none;">{{app.user.code}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Nom & Prenoms</th>
+                        <td>{{app.user.nom}} {{app.user.prenoms}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Sexe</th>
+                        <td>{{app.user.sexe.sexe}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Date De Naissance</th>
+                        <td>{{app.user.naissance|date('d M Y')}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Telephone</th>
+                        <td>{{app.user.tel}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Email</th>
+                        <td>{{app.user.email}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Ville & Pays</th>
+                        <td>{{app.user.ville}}, {{app.user.pays}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Adresse</th>
+                        <td>{{app.user.adresse}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Profession</th>
+                        <td>{{app.user.profession}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="cpt_per_gain">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="panel-title">Compte de perception de gain</span>
+                    <a href="{{path('user_update')}}" class="pull-right">Modifier</a>
+                </div>
+                {% set c = app.user.cptPerGain %}
+                <table class="table table-striped">
+                    <tr>
+                        <th class="text-align-right">Nom & Prenoms</th>
+                        <td>{{c.nom}} {{c.prenom}}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-align-right">Telephone</th>
+                        <td>{{c.tel}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+{% endblock %}

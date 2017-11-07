@@ -1,0 +1,41 @@
+{% extends 'CoreBundle:User:base.html.twig' %}
+{% block title %}Organigramme - {{parent()}}{% endblock %}
+{% block _container %}
+<div class="page-header">
+    <h3>Organigramme</h3>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div id="tree-simple">
+{#            {{o.name}}#}
+        </div>
+    </div>
+</div>
+<br />
+{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="{{asset('treant-js-master/Treant.css')}}" />
+{% endblock %}
+{% block javascripts %}
+{{parent()}}
+<script type="text/javascript" src="{{asset('treant-js-master/vendor/raphael.js')}}"></script>
+<script type="text/javascript" src="{{asset('treant-js-master/Treant.js')}}"></script>
+<script type="text/javascript">
+    var s = {
+        text: {name: "{{o.name}}"},
+        children: []
+    };
+    
+    {% for c in o.children %}
+        s.children.push({
+            text: {name: "{{c.name}}"}
+        });
+    {% endfor %}
+    var chart_config = {
+        chart: {container: "#tree-simple"},
+        nodeStructure: s
+    };
+    var my_chart = new Treant(chart_config);
+</script>
+{% endblock %}

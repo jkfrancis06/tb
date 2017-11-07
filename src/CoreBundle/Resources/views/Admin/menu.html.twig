@@ -1,0 +1,43 @@
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#compte" data-toggle="collapse" data-parrent="#accordion">
+                Mon Compte
+            </div>
+        </div>
+        <div id="compte" class="panel-collapse collapse">
+            <div class="list-group">
+                <a href="{{path('admin_profil')}}" class="list-group-item">Profil</a>
+                <a href="{{path('admin_modifier_profil')}}" class="list-group-item">Modifer le profil</a>
+                <a href="{{path('admin_create')}}" class="list-group-item">Ajouter un admin</a>
+                <a href="{{path('admin_logout')}}" class="list-group-item">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#equipe" data-toggle="collapse" data-parrent="#accordion">
+                Paiements
+            </div>
+        </div>
+        <div id="equipe" class="panel-collapse collapse">
+            <div class="list-group">
+                <a href="{{path('paiements_invalides')}}" class="list-group-item">Paiements invalides</a>
+                <a href="{{path('paiements_invalides')}}" class="list-group-item">Paiements valides</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#f" data-toggle="collapse" data-parrent="#accordion">
+                Formations
+            </div>
+        </div>
+        <div id="f" class="panel-collapse collapse">
+            <div class="list-group">
+                <a href="{{path('formation_create')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('formation_index')}}" class="list-group-item">Liste</a>
+            </div>
+        </div>
+    </div>
+</div>

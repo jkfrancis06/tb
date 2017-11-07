@@ -1,0 +1,38 @@
+<nav class="container navbar {% if is_granted('ROLE_ADMIN') %}navbar-inverse{% else %}navbar-default{% endif %}">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">TOP BONHEUR</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li class="dropdown">
+
+                    <ul class="dropdown-menu">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li><a href="{{path('admin_profil')}}#">Profil</a></li>
+                        <li><a href="{{path('admin_logout')}}">Deconnexion</a></li>
+                        {% else %}
+                        <li><a href="{{path('user_account')}}#profil">Profil</a></li>
+                        <li><a href="{{path('user_account')}}#perception_de_gain">Perception de gain</a></li>
+                        <li><a href="{{path('user_logout')}}">Deconnexion</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+                {% else %}
+                <li><a href="{{path('payer')}}">Paiement</a></li>
+                <li><a href="{{path('user_login')}}">Connexion</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

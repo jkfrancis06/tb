@@ -1,0 +1,52 @@
+security:
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
+    CoreBundle\Entity\Admin: plaintext
+    CoreBundle\Entity\User: plaintext
+
+  role_hierarchy:
+    ROLE_ADMIN:       ROLE_USER
+    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+
+  providers:
+    main:
+      entity:
+        class:    CoreBundle\Entity\Admin
+        property: tel
+    user:
+      entity:
+        class:    CoreBundle\Entity\User
+        property: tel
+
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    admin:
+      pattern: ^/admin
+      anonymous: true
+      provider: main
+      form_login:
+        login_path: admin_login
+        check_path: admin_login_check
+        default_target_path: formation_create
+      logout:
+        path: admin_logout
+        target: admin_login
+    user:
+      pattern: ^/
+      anonymous: true
+      provider: user
+      form_login:
+        login_path: user_login
+        check_path: user_login_check
+        default_target_path: user_index
+      logout:
+        path: user_logout
+        target: user_login
+
+
+  access_control:
+    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

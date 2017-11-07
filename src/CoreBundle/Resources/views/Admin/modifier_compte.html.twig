@@ -1,0 +1,52 @@
+{% extends 'CoreBundle:Admin:base.html.twig' %}
+
+{% block title %}C Admin - {{parent()}}{% endblock %}
+
+{% block _container %}
+    <div class="row">
+        <div class="page-header">
+            <h3>Nouveau Admin</h3>
+        </div>
+        <div class="col-lg-offset-1 col-lg-9 col-md-offset-1 col-md-8 col-sm-offset-1 col-sm-10">
+            {{form_start(form)}}
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            {{form_label(form.nom, 'Nom')}}
+                            {{form_widget(form.nom, {'attr': {'class': 'form-control'}})}}
+                            {{form_errors(form.nom)}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.prenoms, 'Prenoms')}}
+                            {{form_widget(form.prenoms, {'attr': {'class': 'form-control'}})}}
+                            {{form_errors(form.prenoms)}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.tel, 'Numero de telephone')}}
+                            {{form_widget(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Exenple: 99887766'}})}}
+                            {{form_errors(form.tel)}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            {{form_label(form.email, 'E-mail (facultatif)')}}
+                            {{form_widget(form.email, {'attr': {'class': 'form-control'}})}}
+                            {{form_errors(form.email)}}
+                        </div>
+                        <div class="form-group">
+                            {{form_label(form.password, 'Mot de passe')}}
+                            {{form_widget(form.password, {'attr': {'class': 'form-control'}})}}
+                            {{form_errors(form.password)}}
+                        </div>
+                        <div class="form-group">
+                            <label for="cp">Confirmer mot de passe</label>
+                            <input type="password" name="cp" id="cp" class="form-control"/>
+                        </div>
+                        <input type="submit" value="Ajouter" class="btn btn-default pull-right" />
+                    </div>
+                </div>
+            {{form_end(form)}}
+        </div>
+    </div>
+    <br/>
+{% endblock %}

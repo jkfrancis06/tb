@@ -1,0 +1,78 @@
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#formation" data-toggle="collapse" data-parrent="#accordion">
+                <a href="{{path('formation_index')}}">Formation</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#compte" data-toggle="collapse" data-parrent="#accordion">
+                Mon Compte
+            </div>
+        </div>
+        <div id="compte" class="panel-collapse collapse">
+            <div class="list-group">
+                <a href="{{path('user_account')}}#profil" class="list-group-item">Profil</a>
+                <a href="{{path('user_account')}}#cpt_per_gain" class="list-group-item">Compte de perception de gain</a>
+                <a href="{{path('demande_de_retrait')}}" class="list-group-item">Demande de retrait</a>
+                <a href="{{path('user_logout')}}" class="list-group-item">Deconnexion</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#equipe" data-toggle="collapse" data-parrent="#accordion">
+                Mon Equipe
+            </div>
+        </div>
+        <div id="equipe" class="panel-collapse collapse">
+            <div class="list-group">
+                <a href="{{path('organigramme')}}" class="list-group-item">Organigramme</a>
+                <a href="{{path('liste_general')}}" class="list-group-item">Liste des membres en général</a>
+                <a href="{{path('liste_niveau')}}" class="list-group-item">Liste des membres par niveau</a>
+                <a href="{{path('liste_generation')}}" class="list-group-item">Liste des membres par génération</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title" data-target="#financier" data-toggle="collapse" data-parrent="#accordion">
+                Etat Financier
+            </div>
+        </div>
+        <div id="financier" class="panel-collapse collapse">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="list-group-item-heading">Mes commissions</div>
+                    <div class="list-group-item-text">
+                        <ul>
+                            <li><a href="{{path('gains')}}">Gains</a></li>
+                            <li><a href="{{path('alimentation')}}">Auto Alimentation</a></li>
+                            <li><a href="{{path('points')}}">Points</a></li>
+                            <li><a href="#">Transactions</a></li>
+                            <li><a href="#">Total commission</a></li>
+                            <li><a href="#">Total commission perçu</a></li>
+                            <li><a href="#">Commission perçu dernièrement</a></li>
+                            <li><a href="#">Commission disponible</a></li>
+                            <li><a href="#">Commission suspendu</a></li>
+                            <li><a id="cpt-upgrade" href="#" data-toggle="popover" title="Montant" data-content="...">Upgrade</a></li>
+                            <li><a href="#">Repositionnement</a></li>
+                            <li><a href="{{ path('sms') }}">SMS</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="list-group-item-heading">Botique</div>
+                    <div class="list-group-item-text">
+                        <ul>
+                            <li><a href="{{path('produit_commander')}}">Acheter</a></li>
+                            <li><a href="{{path('achats')}}">Mes achats</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

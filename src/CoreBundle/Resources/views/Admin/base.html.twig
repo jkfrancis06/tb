@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+    <div class="row">
+        <div class="col-lg-3">
+            {% include 'CoreBundle:Admin:menu.html.twig' %}
+        </div>
+        <div class="col-lg-9">
+            {% block _container %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'CoreBundle:User:base.html.twig' %}
+
+{% block title %}Liste des membres par generation - {{parent()}}{% endblock %}
+
+{% block _container %}
+    <div class="page-header">
+        <h3>Liste des membres par generation</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                    <th>Nom $ Prenoms</th>
+                    <th>ID</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>Ville & Pays</th>
+                    <th>ID Parrain</th>
+                </tr>
+                {% for n in l %}
+                    {% if n is not empty %}
+                        <tr>
+                            <td colspan="6" style="text-align: center;">
+                                <strong>Generation {{loop.index}}</strong>
+                            </td>
+                        </tr>
+                        {% for u in n %}
+                            <tr>
+                                <td>{{u.nom}} {{u.prenoms}}</td>
+                                <td>{{u.code}}</td>
+                                <td>{{u.tel}}</td>
+                                <td>{{u.email}}</td>
+                                <td>{{u.ville}}, {{u.pays}}</td>
+                                <td>{{u.codeParrain}}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <br />
+{% endblock %}
